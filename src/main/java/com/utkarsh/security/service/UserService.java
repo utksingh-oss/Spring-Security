@@ -14,6 +14,7 @@ import java.util.Objects;
 public class UserService {
     private static final String FAILURE = "Failure";
     private static final String SUCCESS = "Success";
+    private static final String DUMMY_AUTH_TOKEN = "afjoofehfhe.fwfjewjefwoihofewheofihofehwoiehfoew.fwehowehfiof";
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -28,11 +29,11 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public ResponseEntity<String> login(String username, String password) {
+    public ResponseEntity<String> verify(String username, String password) {
         User repoUser = userRepository.findByUsername(username);
         if (Objects.isNull(repoUser) || !repoUser.getPassword().equals(bCryptPasswordEncoder.encode(password))) {
             return new ResponseEntity<>(FAILURE, HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(SUCCESS, HttpStatus.OK);
+        return new ResponseEntity<>(DUMMY_AUTH_TOKEN, HttpStatus.OK);
     }
 }

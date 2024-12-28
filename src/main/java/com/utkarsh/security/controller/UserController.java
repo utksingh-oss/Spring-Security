@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Objects;
-
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -25,6 +23,6 @@ public class UserController {
 
     @GetMapping("/login")
     public ResponseEntity<String> login(@RequestBody User userRequest) {
-        return userService.login(userRequest.getUsername(), userRequest.getPassword());
+        return userService.verify(userRequest.getUsername(), userRequest.getPassword());
     }
 }

@@ -80,3 +80,15 @@ public class WebSecurityConfig {
     }
 }
 ```
+********************************************************************
+
+### JWT (JSON Web Token)
+- **Single Sign On** : sign in to different applications using same credentials
+- JWT token contains three sections:
+  - Header Section
+  - Payload Data
+  - Verify Signature
+- Once the user logs-in a JWT token is generated and returned to the client-side
+- Client-side then stored the JWT token, and then with each request the token is sent to the server
+- For each request the token is verified, authenticated and authorized
+********************************************************************
