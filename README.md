@@ -55,7 +55,6 @@ spring.security.user.password=iamawesome
 - Authentication Provider will talk to two things
   - `Password Encoder` : maintains the encoding
   - `UserDetailService` : has method `getByUsername()`
-- For implementing the custom authentication, we will be needing
 ********************************************************************
 ### Enabling Web Security
 - when we add `@EnableWebSecurity` in the config class, it imports all the required classes
@@ -80,6 +79,8 @@ public class WebSecurityConfig {
     }
 }
 ```
+********************************************************************
+![img.png](img.png)
 ********************************************************************
 
 ### JWT (JSON Web Token)
