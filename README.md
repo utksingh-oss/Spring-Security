@@ -92,4 +92,16 @@ public class WebSecurityConfig {
 - Once the user logs-in a JWT token is generated and returned to the client-side
 - Client-side then stored the JWT token, and then with each request the token is sent to the server
 - For each request the token is verified, authenticated and authorized
+- We need to add three dependencies for using JWT:
+  - JJWT::API
+  - JJWT::Implementation
+  - JJWT::Extension::Jackson
 ********************************************************************
+- The name "chain" comes from the design pattern Chain of Responsibility. In this pattern:
+
+- A request passes through a series of handlers (filters).
+- Each handler can process the request and then pass it along to the next handler in the chain.
+- In Spring Security:
+  - The FilterChainProxy orchestrates the sequence of filters.
+  - The filters are ordered, and each filter performs a specific security-related task.
+  - If a filter determines that the request is invalid or unauthorized, it can terminate the chain early.

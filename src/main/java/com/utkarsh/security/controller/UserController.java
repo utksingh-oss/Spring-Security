@@ -23,6 +23,6 @@ public class UserController {
 
     @GetMapping("/login")
     public ResponseEntity<String> login(@RequestBody User userRequest) {
-        return userService.verify(userRequest.getUsername(), userRequest.getPassword());
+        return userService.verify(userRequest);
     }
 }
